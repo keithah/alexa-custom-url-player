@@ -1,0 +1,93 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "custom url player",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "PlayStreamIntent",
+          "slots": [
+            {
+              "name": "url",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "play {url}",
+            "play the stream {url}",
+            "play the URL {url}",
+            "stream {url}",
+            "play audio from {url}",
+            "play the audio at {url}",
+            "open {url}",
+            "play {url} stream",
+            "play {url} URL"
+          ]
+        },
+        {
+          "name": "PlayFromAppIntent",
+          "samples": [
+            "play from my app",
+            "play from app",
+            "play from web",
+            "open app",
+            "use app"
+          ]
+        },
+        {
+          "name": "CheckPendingUrlIntent",
+          "samples": [
+            "check for pending URL",
+            "check pending",
+            "play pending URL",
+            "check for URL"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "PlayStreamIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "url",
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.Url"
+              }
+            }
+          ]
+        }
+      },
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.Url",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What URL would you like to play?"
+          }
+        ]
+      }
+    ]
+  }
+}

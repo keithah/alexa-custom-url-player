@@ -1,0 +1,17 @@
+{
+  "name": "alexa-custom-url-player",
+  "version": "1.0.0",
+  "description": "Alexa skill for playing custom HLS and Icecast URLs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ask-sdk-core": "^2.12.1",
+    "ask-sdk-model": "^1.44.1",
+    "aws-sdk": "^2.1491.0"
+  },
+  "keywords": ["alexa", "audio", "streaming", "hls", "icecast"],
+  "author": "",
+  "license": "ISC"
+}

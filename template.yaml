@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Alexa Custom URL Player Skill
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 256
+    Runtime: nodejs18.x
+
+Resources:
+  CustomUrlPlayerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: .
+      Description: Alexa skill for playing custom HLS and Icecast URLs
+      Environment:
+        Variables:
+          NODE_ENV: production
+      Events:
+        AlexaSkillEvent:
+          Type: AlexaSkill
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource: arn:aws:logs:*:*:*
+
+Outputs:
+  CustomUrlPlayerFunction:
+    Description: Alexa Custom URL Player Lambda Function ARN
+    Value: !GetAtt CustomUrlPlayerFunction.Arn
+  CustomUrlPlayerFunctionIamRole:
+    Description: Implicit IAM Role created for Custom URL Player function
+    Value: !GetAtt CustomUrlPlayerFunctionRole.Arn

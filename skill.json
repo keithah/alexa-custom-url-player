@@ -1,0 +1,75 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:804033740156:function:CustomUrlPlayer"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:804033740156:function:CustomUrlPlayer"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:804033740156:function:CustomUrlPlayer"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:804033740156:function:CustomUrlPlayer"
+            }
+          }
+        }
+      },
+      "audioPlayer": {}
+    },
+    "manifestVersion": "1.0",
+    "permissions": [],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "containsAds": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "https://example.com/privacy",
+          "termsOfUseUrl": "https://example.com/terms"
+        }
+      },
+      "usesPersonalInfo": false
+    },
+    "publishingInformation": {
+      "category": "STREAMING_MUSIC_OR_RADIO",
+      "distributionCountries": [],
+      "distributionMode": "PUBLIC",
+      "locales": {
+        "en-US": {
+          "description": "Play any HLS or Icecast stream URL with Alexa. Simply provide the URL and enjoy your custom audio streams.",
+          "examplePhrases": [
+            "Alexa, open Custom URL Player",
+            "Alexa, ask Custom URL Player to play HTTP colon slash slash example dot com slash stream dot M 3 U 8",
+            "Alexa, ask Custom URL Player to play my radio stream",
+            "Alexa, ask Custom URL Player to play from my app",
+            "Alexa, ask Custom URL Player to check for pending URL"
+          ],
+          "keywords": [
+            "audio",
+            "streaming",
+            "radio",
+            "music",
+            "custom",
+            "URL",
+            "HLS",
+            "Icecast"
+          ],
+          "name": "Custom URL Player",
+          "summary": "Play custom HLS and Icecast audio streams"
+        }
+      },
+      "testingInstructions": "1. Enable the skill\n2. Say 'Alexa, open Custom URL Player'\n3. Provide a valid HLS (.m3u8) or Icecast stream URL\n4. The skill will validate and play the stream"
+    }
+  }
+}
