@@ -1,0 +1,20 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda"
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Custom URL Player",
+          "summary": "Play custom audio streams"
+        }
+      }
+    }
+  }
+}
